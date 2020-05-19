@@ -4,7 +4,7 @@
 
 ############################################
 ################# CHANGE ###################
-ver=0.4
+ver=0.5
 dat=19.05.2020
 file=start.sh
 link=https://raw.githubusercontent.com/Mobulos/reformcloud-start-file/master/start.sh
@@ -71,6 +71,8 @@ function pre () {
 
 function update () {
 	# CHECK, OB DAS SCRIPT HEUTE UPGEDATED WURDE
+	pre
+	sleep 5
 	if [ -f $(date +%Y-%m-%d) ]
 	then
 		# WENN HEUTE BEREITS UPGEDATED GEHE ZUM MENÜ
@@ -99,9 +101,14 @@ function update () {
 	exit
 }
 
+update
+
 function start () {
 	pre
-	sleep .5
+	sleep 3
 	screen -S cloud java -XX:+UseG1GC -XX:MaxGCPauseMillis=50 -XX:CompileThreshold=100 -XX:+UseCompressedOops -Xmx512m -Xms256m -jar runner.jar
+	start
 }
 
+start
+exit
