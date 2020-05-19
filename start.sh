@@ -4,7 +4,7 @@
 
 ############################################
 ################# CHANGE ###################
-ver=0.3
+ver=0.4
 dat=19.05.2020
 file=start.sh
 link=https://raw.githubusercontent.com/Mobulos/reformcloud-start-file/master/start.sh
@@ -88,7 +88,6 @@ function update () {
 		curl --progress-bar $link -o $file.1
 		sleep 2
 		echo "$reset"
-		rm $file
 		mv $file.1 $file
 		clear
 		log_success "Das Update wurde Erfolgreich heruntergeladen!"
