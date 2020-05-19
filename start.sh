@@ -4,7 +4,7 @@
 
 ############################################
 ################# CHANGE ###################
-ver=0.5
+ver=0.6
 dat=19.05.2020
 file=start.sh
 link=https://raw.githubusercontent.com/Mobulos/reformcloud-start-file/master/start.sh
@@ -76,8 +76,7 @@ function update () {
 	if [ -f $(date +%Y-%m-%d) ]
 	then
 		# WENN HEUTE BEREITS UPGEDATED GEHE ZUM MENÜ
-		menue
-		./start.sh
+		start
 	elif [ '*' ]
 	then
 		# WENN HEUTE NICHT UPGEDATED GEHE WEITER
